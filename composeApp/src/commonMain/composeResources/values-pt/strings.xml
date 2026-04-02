@@ -6,7 +6,7 @@
     <string name="nav_experience">Experiência</string>
 
     <!-- About Section -->
-    <string name="about_greeting">Olá, eu sou Ricardo Junior</string>
+    <string name="about_greeting">Ricardo Junior</string>
     <string name="about_title">Desenvolvedor Android &amp; iOS</string>
     <string name="about_description">Sou um Desenvolvedor Mobile Nativo focado em resultados e na arquitetura de sistemas escaláveis e modulares. Trago rigor de nível de produção para cada camada de desenvolvimento, desde a lógica de build de baixo nível até as interfaces de usuário. Tenho experiência em colaborações Agile e compromisso em evoluir com os padrões da indústria.</string>
     <string name="about_resume">Currículo</string>
@@ -27,12 +27,12 @@
 
     <string name="work_exp_bullet_1">Desenvolvi e mantive sistemas WebSocket para mensagens instantâneas e notificações enviadas pelo servidor, coordenando a sincronização de dados em tempo real com CoreData.</string>
     <string name="work_exp_bullet_2">Projetei fluxos de autenticação seguros baseados em JWT e gerenciei uploads de documentos criptografados para processamento de dados sensíveis no servidor.</string>
-    <string name="work_exp_bullet_3">Co-desenvolvi uma biblioteca personalizada de cache e carregamento de imagens, reduzindo significativamente o tráfego de rede e garantindo um carregamento de imagens suave e de alta performance.</string>
-    <string name="work_exp_bullet_4">Mantive um padrão Clean-Swift pré-existente que mantém um fluxo de dados unidirecional, garantindo modularidade estrita e alta testabilidade em conjuntos de recursos complexos.</string>
+    <string name="work_exp_bullet_3">Desenvolvi uma biblioteca personalizada de cache e carregamento de imagens, reduzindo significativamente o tráfego de rede e garantindo um carregamento de imagens suave e de alta performance.</string>
+    <string name="work_exp_bullet_4">Mantive um padrão Clean-Swift pré-existente que mantém um fluxo de dados unidirecional, garantindo modularidade estrita e alta testabilidade em conjuntos de funcionalidades complexas.</string>
 
     <string name="agile_title">Gestão do Ciclo de Vida Agile &amp; Comunicação Técnica Profissional</string>
-    <string name="agile_bullet_1">Dominie o ciclo de vida Agile/Scrum dentro de uma equipe grande, gerenciando dependências de tarefas complexas, story points e marcos de sprint no Jira.</string>
-    <string name="agile_bullet_2">Otimizei os prazos de entrega gerenciando um alto volume de tickets no Jira, participando de stand-ups diários e fornecendo estimativas de esforço precisas para implementações de recursos complexos.</string>
+    <string name="agile_bullet_1">Dominei o ciclo de vida Agile/Scrum dentro de uma equipe grande, gerenciando tarefas complexas e objectivos de sprint no Jira.</string>
+    <string name="agile_bullet_2">Otimizei os prazos de entrega gerenciando um alto volume de tickets no Jira, participando de stand-ups diários e fornecendo estimativas de esforço precisas para implementações de funcionalidades complexas.</string>
     <string name="agile_bullet_3">Mantive alta produtividade em um ambiente 100% remoto, utilizando Telegram e Google Meets para mitigar falhas de comunicação e garantir o cumprimento de prazos sem atrasos.</string>
     <string name="agile_bullet_4">Atuei como ponte técnica entre o desenvolvimento iOS e a equipe ampliada de mais de 25 pessoas, negociando contratos de API com o Backend e garantindo a viabilidade de UI/UX com o Design.</string>
     <string name="agile_bullet_5">Naveguei em um ambiente GitHub de alta atividade, realizando revisões de código rigorosas e gerenciando ciclos de merge complexos para garantir a integridade da base de código.</string>
@@ -62,11 +62,11 @@
 
     <!-- AppConstants - Projects -->
     <string name="project_ec_name">E-Catalogs</string>
-    <string name="project_ec_desc">E-Catalogs é uma plataforma sofisticada de descoberta multimídia que suporta filmes, livros, animes, mangás e séries de TV. Desenvolvido desde 2022, evoluiu de um projeto simples para uma arquitetura robusta e multi-módulo construída sobre os princípios de Clean Architecture e MVVM. O aplicativo apresenta um motor offline-first de alta performance usando Paging 3 e Room, com injeção de dependência via Hilt e gerenciamento de estado através do Proto Datastore. Ele demonstra uma transição moderna de UI de XML para Jetpack Compose, unificada por um sistema de design escalável. O sistema de build utiliza Gradle Version Catalogs e Convention Plugins, garantindo escalabilidade pronta para produção e manutenibilidade de nível profissional em todos os recursos.</string>
+    <string name="project_ec_desc">E-Catalogs é uma plataforma sofisticada de descoberta ву multimídia que suporta filmes, livros, animes, mangás e séries de TV. Em Desenvolvimento desde 2022, evoluiu de um projeto simples para uma arquitetura robusta e multi-módulo construída sobre os princípios de Clean Architecture e MVVM. O aplicativo apresenta um motor offline-first de alta performance usando Paging 3 e Room, com injeção de dependência via Hilt e gerenciamento de estado através do Proto Datastore. Ele demonstra uma transição moderna de UI de XML para Jetpack Compose, unificada por um sistema de design escalável. O sistema de build utiliza Gradle Version Catalogs e Convention Plugins, garantindo escalabilidade pronta para produção e manutenibilidade de nível profissional em todos os recursos.</string>
     <string name="project_ec_short_desc">Um aplicativo abrangente de navegação e descoberta de filmes, livros e animes</string>
-    <string name="project_ec_growth">Ao longo de quatro anos de desenvolvimento independente, evoluí de um simples desenvolvedor para um engenheiro orientado a sistemas, capaz de gerenciar ciclos de vida Android em escala corporativa. Meu crescimento é definido pela resiliência arquitetural; naveguei com sucesso por este projeto através das mudanças da indústria nas diretrizes de como construir um aplicativo Android pronto para produção. Este projeto serve como um laboratório onde transitei de escrever código que simplesmente \"funciona\" para arquitetar sistemas escaláveis e de fácil manutenção. Ao tratar um projeto pessoal com rigor de nível de produção, acredito que poderia implementar de forma independente os mesmos fluxos de trabalho sofisticados e padrões modulares encontrados em ambientes profissionais de alta concorrência.</string>
+    <string name="project_ec_growth">Ao longo de quatro anos de desenvolvimento independente, evoluí de um simples desenvolvedor para um engenheiro orientado a sistemas, capaz de gerenciar ciclos de vida Android em escala corporativa. Meu crescimento é definido pela resiliência arquitetural; naveguei com sucesso por este projeto através das mudanças da indústria nas diretrizes de como construir um aplicativo Android pronto para produção. Este projeto serve como um laboratório onde transitei de escrever código que simplesmente "funciona" para arquitetar sistemas escaláveis e de fácil manutenção. Ao tratar um projeto pessoal com rigor de nível de produção, acredito que poderia implementar de forma independente os mesmos fluxos de trabalho sofisticados e padrões modulares encontrados em ambientes profissionais de alta concorrência.</string>
     <string name="project_ec_duration">Desde 2022</string>
-    <string name="project_ec_duration_desc">Este projeto representa um ciclo de vida de desenvolvimento infinito de modernização contínua.</string>
+    <string name="project_ec_duration_desc">Este projeto representa um ciclo de vida de desenvolvimento infinito e modernização contínua.</string>
     <string name="project_ec_platform">Android</string>
 
     <string name="project_vt_name">Viper Todo List</string>
@@ -78,8 +78,8 @@
     <string name="project_vt_platform">iOS</string>
 
     <string name="project_bs_name">Blank-Space</string>
-    <string name="project_bs_desc">O Blank-Space foi construído com foco na comunidade e na criatividade. O aplicativo apresenta um feed inicial de rolagem infinita de memes obtidos via API, navegação categorizada e um conjunto robusto de ferramentas de criação que permitem aos usuários editar modelos e compartilhar suas próprias \"Member Edits\" com a comunidade. Além do consumo de conteúdo, a plataforma promove a interação em tempo real através de chats de grupo integrados e mensagens privadas seguras. Ele serve como um ecossistema abrangente para entusiastas de memes descobrirem, criarem e discutirem a cultura da internet em alta.</string>
-    <string name="project_bs_short_desc">O Blank-Space é um aplicativo Android social dinâmico e focado em memes, projetado para fornecer uma experiência de alto engajamento, estilo \"Instagram\".</string>
+    <string name="project_bs_desc">O Blank-Space foi construído com foco na comunidade e na criatividade. O aplicativo apresenta um feed inicial de rolagem infinita de memes obtidos via API, navegação categorizada e um conjunto robusto de ferramentas de criação que permitem aos usuários editar modelos e compartilhar suas próprias "Member Edits" com a comunidade. Além do consumo de conteúdo, a plataforma promove a interação em tempo real através de chats de grupo integrados e mensagens privadas seguras. Ele serve como um ecossistema abrangente para entusiastas de memes descobrirem, criarem e discutirem a cultura da internet em alta.</string>
+    <string name="project_bs_short_desc">O Blank-Space é um aplicativo Android social dinâmico e focado em memes, projetado para fornecer uma experiência de alto engajamento, estilo Instagram.</string>
     <string name="project_bs_growth">Este projeto foi minha primeira experiência com desenvolvimento em equipe. Através deste projeto, aprendi a importância crítica do controle de versão, delegação de tarefas e integração de código com o código do meu parceiro. Este projeto exigiu que eu dominasse o Firebase Firestore, aprendesse a lidar com ouvintes em tempo real, gerenciasse a consistência de dados entre diferentes usuários e protegesse as informações do usuário via Firebase Auth. A implementação do WorkManager para notificações exigiu uma compreensão do sistema Android além do primeiro plano.</string>
     <string name="project_bs_duration">1 mês</string>
     <string name="project_bs_duration_desc">Levou com sucesso o projeto do conceito ao recurso completo em um sprint rápido de 1 mês.</string>
@@ -137,9 +137,9 @@
     <string name="ec_challenge_2">Transição de uma base de código monolítica para um sistema multi-módulo altamente desacoplado e em camadas por recursos.</string>
     <string name="ec_challenge_3">Migrar o sistema através de três gerações de sistemas de gerenciamento de dependência Gradle.</string>
     <string name="ec_challenge_4">Corrigir bugs relatados pelos usuários.</string>
-    <string name="ec_challenge_5">Implementar recursos solicitados pelos usuários.</string>
+    <string name="ec_challenge_5">Implementar funcionalidades solicitadas pelos usuários.</string>
     <string name="ec_challenge_6">Internacionalização.</string>
-    <string name="ec_challenge_7">Projetei um módulo de sistema de design de UI centralizado.</string>
+    <string name="ec_challenge_7">Projetar um módulo de sistema de design de UI centralizado.</string>
     <string name="ec_challenge_8">Otimização de layouts para melhorar a performance e reduzir o uso de memória.</string>
     <string name="ec_challenge_9">Paginação com RemoteMediator usando Paging3 com APIs REST e Room.</string>
     <string name="ec_challenge_10">Implementar uma arquitetura offline-first.</string>
@@ -176,7 +176,7 @@
     <string name="bs_feature_4">Member Edits: Criou um espaço social dedicado para conteúdo gerado pelo usuário.</string>
     <string name="bs_feature_5">Biblioteca de Favoritos: Construiu um recurso de favoritos para os usuários salvarem seus memes e modelos favoritos.</string>
     <string name="bs_feature_6">Sistema de Mensagens: Projetou um Chat de Grupo Geral e um sistema de Mensagens Privadas para comunicação.</string>
-    <string name="bs_feature_7">Sincronização de Dados em Tempo Real: Aproveitou o Firebase Firestore para garantir que as mensagens e \"Member Edits\" fossem atualizados instantaneamente em todos os dispositivos.</string>
+    <string name="bs_feature_7">Sincronização de Dados em Tempo Real: Aproveitou o Firebase Firestore para garantir que as mensagens e "Member Edits" fossem atualizados instantaneamente em todos os dispositivos.</string>
     <string name="bs_feature_8">Notificações Inteligentes em Segundo Plano: Com o Android WorkManager, gerenciou tarefas em segundo plano, garantindo que os usuários recebam alertas para novos memes e notificações em tempo real para mensagens recebidas quando o aplicativo está em segundo plano.</string>
 
 </resources>

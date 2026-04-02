@@ -26,6 +26,7 @@ import portfolio.composeapp.generated.resources.Res
 import portfolio.composeapp.generated.resources.contact_availability
 import portfolio.composeapp.generated.resources.contact_cta
 import portfolio.composeapp.generated.resources.email
+import portfolio.composeapp.generated.resources.instagram
 import portfolio.composeapp.generated.resources.telegram
 
 
@@ -40,9 +41,7 @@ fun ContactsSection(
         shape = RoundedCornerShape(32.dp),
     ) {
         FlowRow(
-            Modifier
-                .padding(horizontal = 40.dp, vertical = 48.dp)
-                .fillMaxWidth(),
+            Modifier.padding(horizontal = 40.dp, vertical = 48.dp).fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalArrangement = Arrangement.Center
         ) {
@@ -63,11 +62,29 @@ fun ContactsSection(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                IconButton(onClick = {uriHandler.openUri("mailto:Ricardo.m.jnr@mail.ru")}) {
-                    Icon(painterResource(Res.drawable.email), null, tint = Color.White, modifier = Modifier.size(30.dp))
+                IconButton(onClick = { uriHandler.openUri("mailto:Ricardo.m.jnr@mail.ru") }) {
+                    Icon(
+                        painterResource(Res.drawable.email),
+                        null,
+                        tint = Color.White,
+                        modifier = Modifier.size(30.dp)
+                    )
                 }
-                IconButton(onClick = {uriHandler.openUri("https://t.me/rColeJnr")}) {
-                    Icon(painter = painterResource(Res.drawable.telegram), null, tint = Color.White, modifier = Modifier.size(30.dp))
+                IconButton(onClick = { uriHandler.openUri("https://t.me/rColeJnr") }) {
+                    Icon(
+                        painter = painterResource(Res.drawable.telegram),
+                        null,
+                        tint = Color.White,
+                        modifier = Modifier.size(30.dp)
+                    )
+                }
+                IconButton(onClick = { uriHandler.openUri("https://instagram.com/rColeJnr") }) {
+                    Icon(
+                        painter = painterResource(Res.drawable.instagram),
+                        null,
+                        tint = Color.White,
+                        modifier = Modifier.size(30.dp)
+                    )
                 }
             }
         }

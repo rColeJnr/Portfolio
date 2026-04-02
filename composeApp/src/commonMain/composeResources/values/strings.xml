@@ -6,7 +6,7 @@
     <string name="nav_experience">Experience</string>
 
     <!-- About Section -->
-    <string name="about_greeting">Hi, I\'m Ricardo Junior</string>
+    <string name="about_greeting">Ricardo Junior</string>
     <string name="about_title">Android &amp; iOS Developer</string>
     <string name="about_description">I am a performance-driven Native Mobile Developer focused on architecting scalable, modular systems. I bring production-ready rigor to every layer of development, from low-level build logic to UIs. With experience in Agile collaborations and a commitment to evolving with industry standards.</string>
     <string name="about_resume">Resume</string>
@@ -28,10 +28,10 @@
     <string name="work_exp_bullet_1">Developed and maintained WebSocket systems for instant messaging and server-driven notifications, coordinating real-time data synchronization with CoreData.</string>
     <string name="work_exp_bullet_2">Engineered secure JWT-based authentication flows and handled encrypted document uploads for server-side processing of sensitive data.</string>
     <string name="work_exp_bullet_3">Co-developed a custom image caching and loading library, significantly reducing network overhead and ensuring a smooth, high-performance image loading.</string>
-    <string name="work_exp_bullet_4">Maintained a pre-existing Clean-Swift pattern that maintains an unidirectional data flow, ensuring strict modularity and high testability across complex feature sets.</string>
+    <string name="work_exp_bullet_4">Maintained a pre-existing Clean-Swift pattern that maintains a unidirectional data flow, ensuring strict modularity and high testability across complex feature sets.</string>
 
     <string name="agile_title">Agile Lifecycle Management &amp; Professional Technical Communication</string>
-    <string name="agile_bullet_1">Mastered the Agile/Scrum lifecycle within a large team, managing complex task dependencies, story points, and sprint milestones in Jira.</string>
+    <string name="agile_bullet_1">Mastered the Agile/Scrum lifecycle within a large team, managing complex tasks and sprint milestones in Jira.</string>
     <string name="agile_bullet_2">Optimized delivery timelines by managing a high volume of Jira tickets, participating in daily stand-ups, and providing accurate effort estimations for complex feature implementations.</string>
     <string name="agile_bullet_3">Maintained high productivity in a 100% remote environment, utilizing Telegram and Google Meets to bridge communication gaps and ensure zero-delay in milestone reporting</string>
     <string name="agile_bullet_4">Acted as a technical bridge between iOS development and the broader 25+ person team, negotiating API contracts with Backend and ensuring UI/UX feasibility with Design.</string>
@@ -47,7 +47,7 @@
     <string name="lang_fluent"> - Fluent</string>
 
     <!-- Contact Section -->
-    <string name="contact_cta">Let\'s build something together</string>
+    <string name="contact_cta">Let's build something together</string>
     <string name="contact_availability">Available for freelance projects and full-time opportunities</string>
 
     <!-- Project Details -->
