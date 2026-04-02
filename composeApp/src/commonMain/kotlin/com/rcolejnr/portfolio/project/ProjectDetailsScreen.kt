@@ -47,7 +47,6 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalUriHandler
@@ -73,7 +72,11 @@ import portfolio.composeapp.generated.resources.key_features
 import portfolio.composeapp.generated.resources.project_overview
 import portfolio.composeapp.generated.resources.technologies_tools
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class, ExperimentalLayoutApi::class)
+@OptIn(
+    ExperimentalMaterial3Api::class,
+    ExperimentalFoundationApi::class,
+    ExperimentalLayoutApi::class
+)
 @Composable
 fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
     val project = AppConstants.getProjects().find { it.id == projectId } ?: return
@@ -126,7 +129,11 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                         .fillMaxWidth()
                         .height(if (isCompact) 250.dp else 400.dp),
                     shape = RoundedCornerShape(32.dp),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.3f))
+                    colors = CardDefaults.cardColors(
+                        containerColor = MaterialTheme.colorScheme.secondaryContainer.copy(
+                            alpha = 0.3f
+                        )
+                    )
                 ) {
                     Box(Modifier.fillMaxSize()) {
                         Image(
@@ -185,10 +192,13 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                             Icon(
                                 painter = painterResource(Res.drawable.github),
                                 contentDescription = null,
-                                tint = Color.Black
+                                tint = MaterialTheme.colorScheme.onSurfaceVariant
                             )
                             Spacer(Modifier.width(8.dp))
-                            Text(stringResource(Res.string.about_github), color = Color.Black)
+                            Text(
+                                stringResource(Res.string.about_github),
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
                         }
                         TextButton(
                             onClick = { uriHandler.openUri("https://play.google.com/store/apps/details?id=com.rick.moviecatalog&pcampaignid=web_share") },
@@ -200,11 +210,14 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                             Icon(
                                 painter = painterResource(Res.drawable.google_play),
                                 contentDescription = null,
-                                tint = Color.Black,
+                                tint = MaterialTheme.colorScheme.onSurfaceVariant,
                                 modifier = Modifier.size(14.dp)
                             )
                             Spacer(Modifier.width(8.dp))
-                            Text(stringResource(Res.string.google_play_store), color = Color.Black)
+                            Text(
+                                stringResource(Res.string.google_play_store),
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
                         }
                     }
                 } else {
@@ -218,10 +231,13 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                         Icon(
                             painter = painterResource(Res.drawable.github),
                             contentDescription = null,
-                            tint = Color.Black
+                            tint = MaterialTheme.colorScheme.onSurfaceVariant
                         )
                         Spacer(Modifier.width(8.dp))
-                        Text(stringResource(Res.string.about_github), color = Color.Black)
+                        Text(
+                            stringResource(Res.string.about_github),
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
                     }
                 }
 
@@ -284,7 +300,9 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                     ) {
                         project.keyFeatures.forEach { feature ->
                             Row(
-                                modifier = if (isCompact) Modifier.fillMaxWidth() else Modifier.fillMaxWidth(0.48f),
+                                modifier = if (isCompact) Modifier.fillMaxWidth() else Modifier.fillMaxWidth(
+                                    0.48f
+                                ),
                                 verticalAlignment = Alignment.CenterVertically
                             ) {
                                 Icon(
@@ -294,7 +312,10 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                                     tint = MaterialTheme.colorScheme.primary
                                 )
                                 Spacer(Modifier.width(12.dp))
-                                Text(stringResource(feature), style = MaterialTheme.typography.bodyLarge)
+                                Text(
+                                    stringResource(feature),
+                                    style = MaterialTheme.typography.bodyLarge
+                                )
                             }
                         }
                     }
@@ -313,12 +334,19 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                     ) {
                         project.technologies.forEach { tech ->
                             Card(
-                                modifier = if (isCompact) Modifier.fillMaxWidth() else Modifier.fillMaxWidth(0.31f),
+                                modifier = if (isCompact) Modifier.fillMaxWidth() else Modifier.fillMaxWidth(
+                                    0.31f
+                                ),
                                 colors = CardDefaults.cardColors(
-                                    containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
+                                    containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(
+                                        alpha = 0.5f
+                                    )
                                 ),
                                 shape = RoundedCornerShape(16.dp),
-                                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f))
+                                border = BorderStroke(
+                                    1.dp,
+                                    MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f)
+                                )
                             ) {
                                 Box(
                                     modifier = Modifier
@@ -363,7 +391,9 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                             Card(
                                 modifier = Modifier.fillMaxWidth(),
                                 colors = CardDefaults.cardColors(
-                                    containerColor = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.05f)
+                                    containerColor = MaterialTheme.colorScheme.errorContainer.copy(
+                                        alpha = 0.05f
+                                    )
                                 ),
                                 shape = RoundedCornerShape(20.dp),
                                 border = BorderStroke(

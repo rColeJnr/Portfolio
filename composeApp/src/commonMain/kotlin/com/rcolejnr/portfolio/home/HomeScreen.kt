@@ -176,7 +176,7 @@ fun HomeSections(
                                     Res.string.section_programming_languages,
                                     getProgrammingLanguages(),
                                     itemWidth,
-                                    Color.Blue,
+                                    Color.Cyan,
                                     icon = Res.drawable.angle_brackets
                                 )
                                 LanguageCard(itemWidth)

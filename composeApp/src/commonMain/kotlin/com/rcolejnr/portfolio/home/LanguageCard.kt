@@ -73,7 +73,7 @@ fun LanguageItem(language: String, level: String) {
         Text(
             level,
             style = MaterialTheme.typography.labelMedium,
-            color = MaterialTheme.colorScheme.primary,
+            color = Color.Green,
             fontWeight = FontWeight.Bold
         )
     }

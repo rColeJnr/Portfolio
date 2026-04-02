@@ -57,7 +57,11 @@ fun WorkExperienceCard(weight: Float) {
                 horizontalArrangement = Arrangement.Start,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Icon(painterResource(Res.drawable.work_exp), null)
+                Icon(
+                    painterResource(Res.drawable.work_exp),
+                    null,
+                    tint = MaterialTheme.colorScheme.onSurface
+                )
                 Spacer(Modifier.width(8.dp))
                 Text(
                     stringResource(Res.string.work_exp_title),
@@ -77,13 +81,14 @@ fun WorkExperienceCard(weight: Float) {
             Text(
                 stringResource(Res.string.work_exp_role),
                 style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
             )
             Spacer(Modifier.height(8.dp))
             Text(
                 stringResource(Res.string.work_exp_company_desc),
                 style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = MaterialTheme.colorScheme.onSurface
             )
             Spacer(Modifier.height(16.dp))
             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -96,7 +101,7 @@ fun WorkExperienceCard(weight: Float) {
             Text(
                 stringResource(Res.string.agile_title),
                 style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = MaterialTheme.colorScheme.onSurface
             )
             Spacer(Modifier.height(16.dp))
             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -119,6 +124,10 @@ fun ExperienceBullet(text: String) {
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.primary
         )
-        Text(text, style = MaterialTheme.typography.bodyMedium)
+        Text(
+            text,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
     }
 }

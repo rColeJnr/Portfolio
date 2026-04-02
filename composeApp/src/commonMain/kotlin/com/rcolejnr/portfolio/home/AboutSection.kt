@@ -17,7 +17,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -46,12 +45,14 @@ fun AboutSection(
             stringResource(Res.string.about_greeting),
             style = MaterialTheme.typography.displayMedium,
             fontWeight = FontWeight.ExtraBold,
+            color = MaterialTheme.colorScheme.onSurface,
             lineHeight = 52.sp
         )
         Text(
             stringResource(Res.string.about_title),
             style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.primary
+            color = MaterialTheme.colorScheme.primary,
+            lineHeight = 38.sp
         )
         Spacer(Modifier.height(24.dp))
         Text(
@@ -62,7 +63,7 @@ fun AboutSection(
         Spacer(Modifier.height(32.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             TextButton(
-                onClick = {uriHandler.openUri("https://drive.google.com/drive/folders/1LeWZ1PQABKmlkldHP8lgaH1yGW4wGC73?usp=sharing")},
+                onClick = { uriHandler.openUri("https://drive.google.com/drive/folders/1LeWZ1PQABKmlkldHP8lgaH1yGW4wGC73?usp=sharing") },
                 modifier = Modifier.background(
                     color = MaterialTheme.colorScheme.surfaceContainerLow,
                     RoundedCornerShape(16.dp)
@@ -71,10 +72,13 @@ fun AboutSection(
                 Icon(
                     imageVector = Icons.TwoTone.Person,
                     contentDescription = null,
-                    tint = Color.Black
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 Spacer(Modifier.width(8.dp))
-                Text(stringResource(Res.string.about_resume), color = Color.Black)
+                Text(
+                    stringResource(Res.string.about_resume),
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
             }
             TextButton(
                 onClick = { uriHandler.openUri("https://github.com/rcolejnr") },
@@ -86,10 +90,13 @@ fun AboutSection(
                 Icon(
                     painter = painterResource(Res.drawable.github),
                     contentDescription = null,
-                    tint = Color.Black
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant
                 )
                 Spacer(Modifier.width(8.dp))
-                Text(stringResource(Res.string.about_github), color = Color.Black)
+                Text(
+                    stringResource(Res.string.about_github),
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
             }
         }
     }
