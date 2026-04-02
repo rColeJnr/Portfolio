@@ -21,7 +21,10 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import portfolio.composeapp.generated.resources.Res
+import portfolio.composeapp.generated.resources.contact_availability
+import portfolio.composeapp.generated.resources.contact_cta
 import portfolio.composeapp.generated.resources.email
 import portfolio.composeapp.generated.resources.telegram
 
@@ -45,13 +48,13 @@ fun ContactsSection(
         ) {
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 Text(
-                    "Let's build something together",
+                    stringResource(Res.string.contact_cta),
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
                 )
                 Text(
-                    "Available for freelance projects and full-time opportunities",
+                    stringResource(Res.string.contact_availability),
                     style = MaterialTheme.typography.bodyLarge,
                     color = Color.White.copy(alpha = 0.7f)
                 )

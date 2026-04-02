@@ -35,6 +35,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.rcolejnr.portfolio.data.Project
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
+import portfolio.composeapp.generated.resources.Res
+import portfolio.composeapp.generated.resources.featured_projects
 
 @Composable
 fun ProjectsSection(
@@ -45,7 +48,7 @@ fun ProjectsSection(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Featured Projects",
+            text = stringResource(Res.string.featured_projects),
             style = MaterialTheme.typography.displaySmall,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSurface,
@@ -111,13 +114,13 @@ fun ProjectCard(project: Project, onClick: () -> Unit) {
             }
             Column(Modifier.padding(12.dp)) {
                 Text(
-                    project.name,
+                    stringResource(project.name),
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold
                 )
                 Spacer(Modifier.height(8.dp))
                 Text(
-                    project.description,
+                    stringResource(project.description),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 3,

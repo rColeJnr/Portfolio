@@ -35,8 +35,12 @@ import com.rcolejnr.portfolio.core.utils.AppConstants.getProgrammingLanguages
 import com.rcolejnr.portfolio.core.utils.AppConstants.getTechSkills
 import com.rcolejnr.portfolio.data.Project
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.stringResource
 import portfolio.composeapp.generated.resources.Res
 import portfolio.composeapp.generated.resources.angle_brackets
+import portfolio.composeapp.generated.resources.section_experience_skills
+import portfolio.composeapp.generated.resources.section_programming_languages
+import portfolio.composeapp.generated.resources.section_technologies
 import portfolio.composeapp.generated.resources.tech_exp
 
 @Composable
@@ -131,7 +135,7 @@ fun HomeSections(
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
                             Text(
-                                "Experience & Skills",
+                                stringResource(Res.string.section_experience_skills),
                                 style = MaterialTheme.typography.displaySmall,
                                 fontWeight = FontWeight.Bold,
                                 color = MaterialTheme.colorScheme.onSurface,
@@ -150,7 +154,7 @@ fun HomeSections(
                                 val itemWidth = if (isCompact) 1f else 0.48f
 
                                 SkillGridItem(
-                                    "Programming Languages",
+                                    Res.string.section_programming_languages,
                                     getProgrammingLanguages(),
                                     itemWidth,
                                     Color.Blue,
@@ -166,7 +170,7 @@ fun HomeSections(
                                 .padding(horizontal = 40.dp, vertical = 24.dp)
                         ) {
                             SkillGridItem(
-                                "Technologies",
+                                Res.string.section_technologies,
                                 getTechSkills(),
                                 1f,
                                 Color.Magenta,

@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.rcolejnr.portfolio.core.theme.PortfolioTheme
 import com.rcolejnr.portfolio.core.theme.WindowSize
+import com.rcolejnr.portfolio.core.utils.AppEnvironment
 import com.rcolejnr.portfolio.home.HomeScreen
 import com.rcolejnr.portfolio.project.ProjectDetailsScreen
 import kotlinx.serialization.Serializable
@@ -14,21 +15,22 @@ import kotlinx.serialization.Serializable
 @Composable
 fun App(windowSize: WindowSize) {
     val navController = rememberNavController()
-
-    PortfolioTheme(windowSize) {
-        NavHost(
-            navController, startDestination = ScreenHome
-        ) {
-            composable<ScreenHome> {
-                HomeScreen { project ->
-                    navController.navigate(ScreenProject(projectId = project.id))
+    AppEnvironment{
+        PortfolioTheme(windowSize) {
+            NavHost(
+                navController, startDestination = ScreenHome
+            ) {
+                composable<ScreenHome> {
+                    HomeScreen { project ->
+                        navController.navigate(ScreenProject(projectId = project.id))
+                    }
                 }
-            }
 
-            composable<ScreenProject> { backStackEntry ->
-                val screenProject: ScreenProject = backStackEntry.toRoute()
-                ProjectDetailsScreen(projectId = screenProject.projectId) {
-                    navController.popBackStack()
+                composable<ScreenProject> { backStackEntry ->
+                    val screenProject: ScreenProject = backStackEntry.toRoute()
+                    ProjectDetailsScreen(projectId = screenProject.projectId) {
+                        navController.popBackStack()
+                    }
                 }
             }
         }

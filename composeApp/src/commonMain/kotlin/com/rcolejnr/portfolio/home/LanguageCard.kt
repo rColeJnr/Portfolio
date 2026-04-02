@@ -23,8 +23,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import portfolio.composeapp.generated.resources.Res
+import portfolio.composeapp.generated.resources.lang_english
+import portfolio.composeapp.generated.resources.lang_fluent
+import portfolio.composeapp.generated.resources.lang_native
+import portfolio.composeapp.generated.resources.lang_portuguese
+import portfolio.composeapp.generated.resources.lang_russian
 import portfolio.composeapp.generated.resources.languages
+import portfolio.composeapp.generated.resources.languages_title
 
 @Composable
 fun LanguageCard(weight: Float) {
@@ -38,7 +45,7 @@ fun LanguageCard(weight: Float) {
                 Icon(painterResource(Res.drawable.languages), null, tint = Color.Green)
                 Spacer(Modifier.width(8.dp))
                 Text(
-                    "Languages",
+                    stringResource(Res.string.languages_title),
                     style = MaterialTheme.typography.displaySmall,
                     fontWeight = FontWeight.Bold,
                     color = MaterialTheme.colorScheme.onSurface,
@@ -47,9 +54,9 @@ fun LanguageCard(weight: Float) {
             }
             Spacer(Modifier.height(16.dp))
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                LanguageItem("Portuguese", " - Native")
-                LanguageItem("English", " - Fluent")
-                LanguageItem("Russian", " - Fluent")
+                LanguageItem(stringResource(Res.string.lang_portuguese), stringResource(Res.string.lang_native))
+                LanguageItem(stringResource(Res.string.lang_english), stringResource(Res.string.lang_fluent))
+                LanguageItem(stringResource(Res.string.lang_russian), stringResource(Res.string.lang_fluent))
             }
         }
     }

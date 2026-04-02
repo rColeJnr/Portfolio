@@ -23,7 +23,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import portfolio.composeapp.generated.resources.Res
+import portfolio.composeapp.generated.resources.about_description
+import portfolio.composeapp.generated.resources.about_github
+import portfolio.composeapp.generated.resources.about_greeting
+import portfolio.composeapp.generated.resources.about_resume
+import portfolio.composeapp.generated.resources.about_title
 import portfolio.composeapp.generated.resources.github
 
 @Composable
@@ -37,19 +43,19 @@ fun AboutSection(
         horizontalAlignment = Alignment.Start
     ) {
         Text(
-            "Hi, I'm Ricardo Junior",
+            stringResource(Res.string.about_greeting),
             style = MaterialTheme.typography.displayMedium,
             fontWeight = FontWeight.ExtraBold,
             lineHeight = 52.sp
         )
         Text(
-            "Android & iOS Developer",
+            stringResource(Res.string.about_title),
             style = MaterialTheme.typography.headlineMedium,
             color = MaterialTheme.colorScheme.primary
         )
         Spacer(Modifier.height(24.dp))
         Text(
-            "I am a performance-driven Native Mobile Developer focused on architecting scalable, modular systems. I bring production-ready rigor to every layer of development, from low-level build logic to UIs. With experience in Agile collaborations and a commitment to evolving with industry standards.",
+            stringResource(Res.string.about_description),
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
@@ -68,7 +74,7 @@ fun AboutSection(
                     tint = Color.Black
                 )
                 Spacer(Modifier.width(8.dp))
-                Text("Resume", color = Color.Black)
+                Text(stringResource(Res.string.about_resume), color = Color.Black)
             }
             TextButton(
                 onClick = { uriHandler.openUri("https://github.com/rcolejnr") },
@@ -83,7 +89,7 @@ fun AboutSection(
                     tint = Color.Black
                 )
                 Spacer(Modifier.width(8.dp))
-                Text("GitHub", color = Color.Black)
+                Text(stringResource(Res.string.about_github), color = Color.Black)
             }
         }
     }

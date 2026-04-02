@@ -25,30 +25,30 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun SkillGridItem(title: String, items: List<String>, weight: Float, color: Color, icon: DrawableResource) {
+fun SkillGridItem(title: StringResource, items: List<StringResource>, weight: Float, color: Color, icon: DrawableResource) {
     ElevatedCard(
         modifier = Modifier.fillMaxWidth(weight).heightIn(min = 180.dp),
         colors = CardDefaults.elevatedCardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow),
         shape = RoundedCornerShape(24.dp)
     ) {
         Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.Center) {
-            if (title.isNotEmpty()) {
-                Row (horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically){
-                    Icon(painterResource(icon), null, tint = color)
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        title,
-                        style = MaterialTheme.typography.displaySmall,
-                        fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurface,
-                        textAlign = TextAlign.Center
-                    )
-                }
-                Spacer(Modifier.height(16.dp))
+            Row (horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically){
+                Icon(painterResource(icon), null, tint = color)
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    stringResource(title),
+                    style = MaterialTheme.typography.displaySmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    textAlign = TextAlign.Center
+                )
             }
+            Spacer(Modifier.height(16.dp))
             FlowRow(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -56,7 +56,7 @@ fun SkillGridItem(title: String, items: List<String>, weight: Float, color: Colo
                 items.forEach { item ->
                     ElevatedSuggestionChip(
                         onClick = {},
-                        label = { Text(item, color = color,) },
+                        label = { Text(stringResource(item), color = color,) },
                         shape = RoundedCornerShape(12.dp)
                     )
                 }

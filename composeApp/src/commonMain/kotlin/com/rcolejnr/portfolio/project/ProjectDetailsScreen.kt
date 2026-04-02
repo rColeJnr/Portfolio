@@ -59,9 +59,19 @@ import com.rcolejnr.portfolio.core.theme.LocalWindowSize
 import com.rcolejnr.portfolio.core.theme.WindowSize
 import com.rcolejnr.portfolio.core.utils.AppConstants
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import portfolio.composeapp.generated.resources.Res
+import portfolio.composeapp.generated.resources.about_github
+import portfolio.composeapp.generated.resources.back
+import portfolio.composeapp.generated.resources.challenges_solutions
+import portfolio.composeapp.generated.resources.development_time
 import portfolio.composeapp.generated.resources.github
 import portfolio.composeapp.generated.resources.google_play
+import portfolio.composeapp.generated.resources.google_play_store
+import portfolio.composeapp.generated.resources.growth_learning
+import portfolio.composeapp.generated.resources.key_features
+import portfolio.composeapp.generated.resources.project_overview
+import portfolio.composeapp.generated.resources.technologies_tools
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class, ExperimentalLayoutApi::class)
 @Composable
@@ -76,7 +86,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
             TopAppBar(
                 title = {
                     Text(
-                        project.name,
+                        stringResource(project.name),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold
                     )
@@ -85,7 +95,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                     IconButton(onClick = onBackClick) {
                         Icon(
                             Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Back"
+                            contentDescription = stringResource(Res.string.back)
                         )
                     }
                 },
@@ -145,13 +155,13 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = project.name,
+                        text = stringResource(project.name),
                         style = MaterialTheme.typography.displaySmall,
                         fontWeight = FontWeight.ExtraBold,
                         color = MaterialTheme.colorScheme.onBackground
                     )
                     Text(
-                        text = project.shortDescription,
+                        text = stringResource(project.shortDescription),
                         style = MaterialTheme.typography.headlineSmall,
                         color = MaterialTheme.colorScheme.primary,
                         fontWeight = FontWeight.Medium
@@ -178,7 +188,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                                 tint = Color.Black
                             )
                             Spacer(Modifier.width(8.dp))
-                            Text("GitHub", color = Color.Black)
+                            Text(stringResource(Res.string.about_github), color = Color.Black)
                         }
                         TextButton(
                             onClick = { uriHandler.openUri("https://play.google.com/store/apps/details?id=com.rick.moviecatalog&pcampaignid=web_share") },
@@ -194,7 +204,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                                 modifier = Modifier.size(14.dp)
                             )
                             Spacer(Modifier.width(8.dp))
-                            Text("Google PlayStore", color = Color.Black)
+                            Text(stringResource(Res.string.google_play_store), color = Color.Black)
                         }
                     }
                 } else {
@@ -211,18 +221,18 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                             tint = Color.Black
                         )
                         Spacer(Modifier.width(8.dp))
-                        Text("GitHub", color = Color.Black)
+                        Text(stringResource(Res.string.about_github), color = Color.Black)
                     }
                 }
 
                 // Project Overview - Full Width
                 DetailSectionCard(
-                    title = "Project Overview",
+                    title = stringResource(Res.string.project_overview),
                     icon = Icons.Outlined.Info,
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = project.description,
+                        text = stringResource(project.description),
                         style = MaterialTheme.typography.bodyLarge,
                         lineHeight = 28.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -231,7 +241,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
 
                 // Development Time - Full Width
                 DetailSectionCard(
-                    title = "Development Time",
+                    title = stringResource(Res.string.development_time),
                     icon = Icons.Outlined.Schedule,
                     modifier = Modifier.fillMaxWidth()
                 ) {
@@ -245,7 +255,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                             shape = RoundedCornerShape(16.dp)
                         ) {
                             Text(
-                                project.duration,
+                                stringResource(project.duration),
                                 modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp),
                                 style = MaterialTheme.typography.headlineMedium,
                                 color = MaterialTheme.colorScheme.primary,
@@ -253,7 +263,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                             )
                         }
                         Text(
-                            project.durationDescription,
+                            stringResource(project.durationDescription),
                             style = MaterialTheme.typography.bodyLarge,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                             modifier = Modifier.weight(1f)
@@ -263,7 +273,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
 
                 // Key Features - Full Width
                 DetailSectionCard(
-                    title = "Key Features",
+                    title = stringResource(Res.string.key_features),
                     icon = Icons.Outlined.Star,
                     modifier = Modifier.fillMaxWidth()
                 ) {
@@ -284,7 +294,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                                     tint = MaterialTheme.colorScheme.primary
                                 )
                                 Spacer(Modifier.width(12.dp))
-                                Text(feature, style = MaterialTheme.typography.bodyLarge)
+                                Text(stringResource(feature), style = MaterialTheme.typography.bodyLarge)
                             }
                         }
                     }
@@ -292,7 +302,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
 
                 // Technologies & Tools - Full Width with 1/3 width items
                 DetailSectionCard(
-                    title = "Technologies & Tools",
+                    title = stringResource(Res.string.technologies_tools),
                     icon = Icons.Outlined.Code,
                     modifier = Modifier.fillMaxWidth()
                 ) {
@@ -317,7 +327,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                                     contentAlignment = Alignment.Center
                                 ) {
                                     Text(
-                                        text = tech,
+                                        text = stringResource(tech),
                                         style = MaterialTheme.typography.bodyMedium,
                                         fontWeight = FontWeight.Bold,
                                         textAlign = TextAlign.Center
@@ -330,12 +340,12 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
 
                 // Growth & Learning
                 DetailSectionCard(
-                    title = "Growth & Learning",
+                    title = stringResource(Res.string.growth_learning),
                     icon = Icons.Outlined.BarChart,
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
-                        text = project.growth,
+                        text = stringResource(project.growth),
                         style = MaterialTheme.typography.bodyLarge,
                         lineHeight = 28.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -344,12 +354,12 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
 
                 // Challenges & Solutions - Standout individual items with Warning icon
                 DetailSectionCard(
-                    title = "Challenges & Solutions",
+                    title = stringResource(Res.string.challenges_solutions),
                     icon = Icons.Outlined.DoneAll,
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Column(verticalArrangement = Arrangement.spacedBy(20.dp)) {
-                        project.challenges.filter { it.isNotBlank() }.forEach { challenge ->
+                        project.challenges.forEach { challenge ->
                             Card(
                                 modifier = Modifier.fillMaxWidth(),
                                 colors = CardDefaults.cardColors(
@@ -378,7 +388,7 @@ fun ProjectDetailsScreen(projectId: String, onBackClick: () -> Unit) {
                                         )
                                     }
                                     Text(
-                                        challenge.trim(),
+                                        stringResource(challenge).trim(),
                                         style = MaterialTheme.typography.bodyLarge,
                                         lineHeight = 26.sp,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant
