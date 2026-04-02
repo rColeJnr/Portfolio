@@ -19,8 +19,10 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -34,6 +36,8 @@ import com.rcolejnr.portfolio.core.theme.WindowSize
 import com.rcolejnr.portfolio.core.utils.AppConstants.getProgrammingLanguages
 import com.rcolejnr.portfolio.core.utils.AppConstants.getTechSkills
 import com.rcolejnr.portfolio.data.Project
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
 import portfolio.composeapp.generated.resources.Res
@@ -53,6 +57,21 @@ fun HomeScreen(
     val lazyListState = rememberLazyListState()
     val screenState by viewModel.uiState.collectAsStateWithLifecycle(HomeState())
     val isCompact = LocalWindowSize.current == WindowSize.COMPACT
+
+    LaunchedEffect(lazyListState) {
+        snapshotFlow { lazyListState.firstVisibleItemIndex }
+            .map { index ->
+                when (index) {
+                    0, 1 -> HomeSection.About
+                    2 -> HomeSection.Projects
+                    else -> HomeSection.Experience
+                }
+            }
+            .distinctUntilChanged()
+            .collect { section ->
+                viewModel.updateSelectedSection(section)
+            }
+    }
 
     HomeSections(
         isCompact = isCompact,

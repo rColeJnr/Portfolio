@@ -2,20 +2,29 @@ package com.rcolejnr.portfolio.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DarkMode
+import androidx.compose.material.icons.filled.LightMode
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.rcolejnr.portfolio.core.theme.isDarkMode
+import com.rcolejnr.portfolio.core.utils.LocalAppLocale
 import com.rcolejnr.portfolio.core.utils.customAppLocale
 import org.jetbrains.compose.resources.stringResource
 import portfolio.composeapp.generated.resources.Res
@@ -26,11 +35,15 @@ fun HomeHeader(
     selectedHomeSection: HomeSection,
     onSectionSelected: (HomeSection) -> Unit
 ) {
+    val currentLocale = LocalAppLocale.current
+    val activeLocale = customAppLocale ?: currentLocale
+    val isDark = isDarkMode ?: isSystemInDarkTheme()
+
     FlowRow(
         modifier = Modifier
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.surface.copy(alpha = 0.95f))
-            .padding(horizontal = 24.dp, vertical = 16.dp),
+            .padding(horizontal = 24.dp, vertical = 8.dp),
         horizontalArrangement = Arrangement.Start,
         verticalArrangement = Arrangement.Center
     ) {
@@ -38,56 +51,65 @@ fun HomeHeader(
             text = stringResource(Res.string.header_title),
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.primary
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier.align(Alignment.CenterVertically)
         )
+        
         Spacer(Modifier.weight(1f))
-        remember { HomeSection.values }.forEach { section ->
+
+        HomeSection.values.forEach { section ->
             Text(
                 text = stringResource(section.title),
                 fontSize = 15.sp,
-                color = MaterialTheme.colorScheme.onSurface,
-                fontWeight = FontWeight.Normal,
-                modifier = Modifier.clickable(true, onClick = { onSectionSelected(section) }  )
+                color = if (selectedHomeSection == section) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                fontWeight = if (selectedHomeSection == section) FontWeight.Bold else FontWeight.Normal,
+                modifier = Modifier
+                    .align(Alignment.CenterVertically)
+                    .clickable(true, onClick = { onSectionSelected(section) } )
+                    .padding(vertical = 8.dp, horizontal = 8.dp)
             )
-            Spacer(Modifier.width(16.dp))
         }
-        Spacer(Modifier.width(8.dp))
-        Text(
-            "EN",
-            fontSize = 13.sp,
-            color = if (customAppLocale == "en") MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
-            modifier = Modifier.clickable(customAppLocale != "en", onClick = { customAppLocale = "en"}),
-            fontWeight = if (customAppLocale == "en") FontWeight.Bold else FontWeight.Normal
-        )
-        Spacer(Modifier.width(6.dp))
-        Text(
-            "|",
-            fontSize = 13.sp,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSurface
-        )
-        Spacer(Modifier.width(6.dp))
-        Text(
-            "PT",
-            fontSize = 13.sp,
-            color = if (customAppLocale == "pt") MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
-            modifier = Modifier.clickable(customAppLocale != "pt", onClick = { customAppLocale = "pt" }),
-            fontWeight = if (customAppLocale == "pt") FontWeight.Bold else FontWeight.Normal
-        )
-        Spacer(Modifier.width(6.dp))
-        Text(
-            "|",
-            fontSize = 13.sp,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSurface
-        )
-        Spacer(Modifier.width(6.dp))
-        Text(
-            "RU",
-            fontSize = 13.sp,
-            color = if (customAppLocale == "ru") MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
-            modifier = Modifier.clickable(customAppLocale != "ru", onClick = { customAppLocale = "ru" }),
-            fontWeight = if (customAppLocale == "ru") FontWeight.Bold else FontWeight.Normal
-        )
+
+        Spacer(Modifier.width(16.dp))
+
+        // Language Selector
+        Row(
+            modifier = Modifier.align(Alignment.CenterVertically),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            LanguageOption("EN", activeLocale.startsWith("en", ignoreCase = true)) { customAppLocale = "en" }
+            Text("|", modifier = Modifier.padding(horizontal = 4.dp), fontSize = 13.sp)
+            LanguageOption("PT", activeLocale.startsWith("pt", ignoreCase = true)) { customAppLocale = "pt" }
+            Text("|", modifier = Modifier.padding(horizontal = 4.dp), fontSize = 13.sp)
+            LanguageOption("RU", activeLocale.startsWith("ru", ignoreCase = true)) { customAppLocale = "ru" }
+        }
+
+        Spacer(Modifier.width(16.dp))
+
+        IconButton(
+            onClick = { isDarkMode = !isDark },
+            modifier = Modifier.align(Alignment.CenterVertically)
+        ) {
+            Icon(
+                imageVector = if (isDark) Icons.Default.LightMode else Icons.Default.DarkMode,
+                contentDescription = "Toggle Dark Mode",
+                tint = MaterialTheme.colorScheme.primary
+            )
+        }
     }
+}
+
+@Composable
+private fun LanguageOption(
+    label: String,
+    isActive: Boolean,
+    onClick: () -> Unit
+) {
+    Text(
+        text = label,
+        fontSize = 13.sp,
+        color = if (isActive) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+        fontWeight = if (isActive) FontWeight.Bold else FontWeight.Normal,
+        modifier = Modifier.clickable(!isActive, onClick = onClick)
+    )
 }

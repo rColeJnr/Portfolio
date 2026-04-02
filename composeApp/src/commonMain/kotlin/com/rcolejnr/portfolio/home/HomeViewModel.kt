@@ -31,4 +31,8 @@ class HomeViewModel: ViewModel() {
         isLoading.value = false
     }
 
+    fun updateSelectedSection(section: HomeSection) {
+        selectedHomeSection.value = section
+    }
+
 }
